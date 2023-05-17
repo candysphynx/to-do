@@ -5,7 +5,7 @@ import Task from './Task.jsx';
 function App() {
 
   const [taskList, setTaskList] = useState([]);
-  const [newTask, setnewTask] = useState([]);
+  const [newTask, setnewTask] = useState({item :"", status:"À faire"});
 
   function New(e) {
     setnewTask(e.target.value);  
@@ -30,7 +30,7 @@ function App() {
   }
 
   const AddTask = () => {
-    setTaskList(taskList => [newTask, ...taskList]);
+    setTaskList(taskList => [...taskList, newTask]);
     console.log(taskList);
   }
   return (
